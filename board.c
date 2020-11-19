@@ -2,6 +2,7 @@
 #define N 6
 int gameboard[N][N]; 
 int main() //빈 보드 출력하기 
+/*빈 칸=0, 흰 알='O', 검은색 알='X'*/ 
 {
 	int col,row;//열과 행 
 	printf("  0 1 2 3 4 5\n -------------\n");
