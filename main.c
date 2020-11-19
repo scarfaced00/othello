@@ -4,19 +4,21 @@
 int gameboard[N][N];
 
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+/* run this program using the console pauser or add your own getch, system("pause") or input loop*/
 
-void init_othello()
+void init_othello()//게임초기화 
 {
 	
 }
-void print_othello()
+void print_othello()//배치상태출력 
 {
 	printf("\n STATUS - WHITE : %d, BLACK : %d",status_w,status_b);
 }
-void check_result()
+void check_result()//결과 출력 
 {
-	
+	printf(" : : flip result : :\n");
+	printf("W: %d E: %d N: %d S: %d NW: %d NE: %d SW: %d SE: %d\n",);
+	printf("%s has flipped %d othellos!\n");
 }
 int ok()
 {
@@ -45,3 +47,4 @@ int main(int argc, char *argv[]) {
 }
 	return 0;
 }
+
