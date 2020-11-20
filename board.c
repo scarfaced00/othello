@@ -2,7 +2,7 @@
 #define N 6
 
 int gameboard[N][N]; 
-int main() //빈 보드 출력하기 
+void init_othello() //빈 보드 출력하기 
 /*빈 칸=0, 흰 알='O', 검은색 알='X'*/ 
 {
 	int i,j;
