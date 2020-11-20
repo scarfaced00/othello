@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define N 6
+#define White 79
+#define Black 88
 int gameboard[N][N];
+int col,row;
 
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop*/
@@ -48,4 +51,18 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 */
+_Bool isGameEnd()
+{
+	int i,j;
+	//칸이 모두 차거나
+	for(i=0;i<6;i++)
+	{
+		for(j=0;j<6;j++)
+		{
+			if(gameboard[i][j]==0)
+			return 0;
+		}
+	 }
+	return 1; 
+}
 
