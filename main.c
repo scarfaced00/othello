@@ -11,15 +11,40 @@ int col,row;
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop*/
 
-/*void init_othello()//게임초기화 
+void init_othello() //보드 초기화 
+/*빈 칸=' ', 흰 알='O', 검은색 알='X'*/ 
 {
-	
+	//모든 칸 빈칸으로 
+	int i,j;
+	for(i-0;i<N;i++)
+		for(j=0;j<N;j++)
+			gameboard[i][j]=EMPTY; 
+	//처음 4개알 두기 
+	gameboard[N/2-1][N/2]=BLACK;
+	gameboard[N/2-1][N/2-1]=WHITE;
+	gameboard[N/2][N/2]=WHITE;
+	gameboard[N/2][N/2-1]=BLACK;
 }
 void print_othello()//배치상태출력 
 {
-	printf("\n STATUS - WHITE : %d, BLACK : %d",status_w,status_b);
+	printf("  0 1 2 3 4 5\n -------------\n");
+	//가로줄 하나씩
+	for(row=0;row<N;row++)
+		{
+			printf("%d|",row);//행번호 출력
+			for(col=0;col<N;col++)
+			{
+				if(gameboard[row][col]==' ')
+					printf(" |");//gameboard원소가 0이면 공백이 출력되게함
+				else
+					printf("%c|",gameboard[row][col]);
+			}
+			//검은색 이면 x, 흰색이면 O,아무것도 없으면 공백출력 
+			printf("\n -------------\n"); //행바꾸기 선 
+		 }
 }
-void check_result()//결과 출력 
+
+/*void check_result()//결과 출력 
 {
 	printf(" : : flip result : :\n");
 	printf("W: %d E: %d N: %d S: %d NW: %d NE: %d SW: %d SE: %d\n",);
@@ -36,21 +61,25 @@ int ok()
                 return 1;
     }
 }
+*/
 int player_change(int player)//차례바꾸기 
 {
-	return (playere%2 +1);
+	return (player%2 +1);
 }
+/*
 int isGameEnd()
 {
 	if
  } 
  */
 int main(int argc, char *argv[]) {
-	int player=2;
+	int player=2;//2가white이고 1이black 
 	int i,j;
-	char players[2][10]={"white","black"};
-	//init_othello();//게임초기화 
-	printf("%s",players[0]);
+	char players[2][10]={"black","white"};
+	init_othello();//게임초기화 
+	print_othello();
+	count_colors();
+	printf("\nput a new %s othello\n",players[player-1]);
 }
 	/*
 	while (isGameEnd==0){ //game종료 조건 확인 
@@ -88,6 +117,7 @@ int main(int argc, char *argv[]) {
 	 }
 	return 1; 
 }
+*/
 void count_colors()
 {
 	int black=0;
@@ -105,6 +135,7 @@ void count_colors()
 	}
 	printf("\nSTATUS - WHITE : %d, BLACK : %d\n",white,black);
 }
+/*
 void flip(int row, int col, int player)
 {
 	int i,j;
