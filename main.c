@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #define N 6
 #define EMPTY ' '
-#define White 79 //'O'
-#define Black 88 //'X'
+#define WHITE 79 //'O'
+#define BLACK 88 //'X'
 int gameboard[N][N];
 int col,row;
+
 
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop*/
@@ -39,10 +40,14 @@ int player_change(int player)//차례바꾸기
 {
 	return (playere%2 +1);
 }
+int isGameEnd()
+{
+	if
+ } 
 int main(int argc, char *argv[]) {
 	int player=2;
-	
 	int i,j;
+	char players[2]={"white","black"};
 	init_othello();//게임초기화 
 	
 	while (isGameEnd==0){ //game종료 조건 확인 
@@ -118,7 +123,7 @@ void flip(int row, int col, int player)
 	if(gamebaord[row][i]==opp)//왼쪽 가로 점검하다 상대방 알 만나면 
 	{
 		i=col-1; 
-		while(gameboard[row][i]==opp)//왼쪽가로에 있는 상대방말을 모두 사용자의 말로 변경 
+		while(gameboard[row][i]==opp)//왼쪽가로에 있는 상대방말을 모두 사용자의 알로 변경 
 		{
 			gameboard[row][i]=user;
 			i--;
