@@ -6,6 +6,7 @@
 #define BLACK 88 //'X'
 int gameboard[N][N];
 int col,row;
+char players[2][10]={"black","white"};
 
 
 
@@ -44,6 +45,7 @@ void print_othello()//배치상태출력
 		 }
 }
 
+
 /*void check_result()//결과 출력 
 {
 	printf(" : : flip result : :\n");
@@ -62,7 +64,7 @@ int ok()
     }
 }
 */
-int player_change(int player)//차례바꾸기 
+/*int player_change(int player)//차례바꾸기 
 {
 	return (player%2 +1);
 }
@@ -72,14 +74,23 @@ int isGameEnd()
 	if
  } 
  */
+void input_index(int *row, int *col, int player)
+ {
+ 	int x;
+ 	printf("\nput a new %s othello : ",players[player-1]);
+ 	scanf("%d %d",row,col);
+ }
 int main(int argc, char *argv[]) {
 	int player=2;//2가white이고 1이black 
 	int i,j;
+	int col,row;
 	char players[2][10]={"black","white"};
+	//char players[2][10]={"black","white"};
 	init_othello();//게임초기화 
 	print_othello();
 	count_colors();
-	printf("\nput a new %s othello\n",players[player-1]);
+	//printf("\nput a new %s othello : ",players[player-1]);
+	input_index(&row,&col,player);
 }
 	/*
 	while (isGameEnd==0){ //game종료 조건 확인 
@@ -118,7 +129,7 @@ int main(int argc, char *argv[]) {
 	return 1; 
 }
 */
-void count_colors()
+void count_colors() //색깔 별 알 개수 체크 
 {
 	int black=0;
 	int white=0;
