@@ -84,9 +84,9 @@ void input_index(int *row, int *col, int player) //좌표 입력받기
  {
  	printf("\nput a new %s othello : ",players[player-1]);
  	scanf("%d %d",row,col);
- 	while(!room_exist(row,col))//존재하지않는칸이면 계속 입력받음 
+ 	while(!flip_ok(*row, *col, player))//적절하지않은좌표이면 입력다시 
  	{
- 		printf("Non existent coordinate\n");
+ 		printf("invalid input\n");
  		printf("\nput a new %s othello : ",players[player-1]);
  		scanf("%d %d",row,col);  
 	 } 
