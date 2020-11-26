@@ -30,7 +30,7 @@ void print_othello()//배치상태출력
 			for(col=0;col<N;col++)
 			{
 				if(gameboard[row][col]==' ')
-					printf(" |");//gameboard원소가 0이면 공백이 출력되게함
+					printf(" |");
 				else
 					printf("%c|",gameboard[row][col]);
 			}
