@@ -74,11 +74,17 @@ int isGameEnd()
 	if
  } 
  */
-void input_index(int *row, int *col, int player)
+void input_index(int *row, int *col, int player) //좌표 입력받기 
  {
  	int x;
  	printf("\nput a new %s othello : ",players[player-1]);
  	scanf("%d %d",row,col);
+ 	do 
+ 	{
+ 		printf("\nput a new %s othello : ",players[player-1]);
+ 		scanf("%d %d",row,col);
+ 		printf("non existent coordinate\n");
+	 } while((!((row >= 0) && (row < N) && (col >= 0) && (col < N))));
  }
 int main(int argc, char *argv[]) {
 	int player=2;//2가white이고 1이black 
@@ -87,10 +93,10 @@ int main(int argc, char *argv[]) {
 	char players[2][10]={"black","white"};
 	//char players[2][10]={"black","white"};
 	init_othello();//게임초기화 
-	print_othello();
+	print_othello(); 
 	count_colors();
 	//printf("\nput a new %s othello : ",players[player-1]);
-	input_index(&row,&col,player);
+	input_index(&row,&col,player); //좌표입력 
 }
 	/*
 	while (isGameEnd==0){ //game종료 조건 확인 
