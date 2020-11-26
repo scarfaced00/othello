@@ -74,4 +74,20 @@ _Bool isThereRoom()//ºóÄ­ÀÌ ÀÖ´ÂÁö È®ÀÎ
 	 }
 	return 1; 
 }
-
+void count_colors()
+{
+	int black=0;
+	int white=0;
+	int i,j;
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<N;j++)
+		{
+			if(gameboard[N][N]==BLACK)
+				black++;
+			else if(gameboard[N][N]==WHITE)
+				white++;
+		}
+	}
+	printf("STATUS - WHITE : %d, BLACK : %d",white,black);
+}
