@@ -11,7 +11,7 @@ int col,row;
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop*/
 
-void init_othello()//게임초기화 
+/*void init_othello()//게임초기화 
 {
 	
 }
@@ -44,12 +44,15 @@ int isGameEnd()
 {
 	if
  } 
+ */
 int main(int argc, char *argv[]) {
 	int player=2;
 	int i,j;
-	char players[2]={"white","black"};
-	init_othello();//게임초기화 
-	
+	char players[2][10]={"white","black"};
+	//init_othello();//게임초기화 
+	printf("%s",players[0]);
+}
+	/*
 	while (isGameEnd==0){ //game종료 조건 확인 
 	print_othello();//배치상태출력 
 	count_colors();
@@ -72,7 +75,7 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 */
-_Bool isThereRoom()//빈칸이 있는지 확인 
+/*_Bool isThereRoom()//빈칸이 있는지 확인 
 {
 	int i,j;
 	for(i=0;i<N;i++)
@@ -130,3 +133,4 @@ void flip(int row, int col, int player)
 		}
 	}
  } 
+ */
