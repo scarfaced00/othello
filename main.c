@@ -35,6 +35,10 @@ int ok()
                 return 1;
     }
 }
+int player_change(int player)
+{
+	return (playere%2 +1);
+}
 int main(int argc, char *argv[]) {
 	int player=2;
 	
