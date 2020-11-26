@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define N 6
-#define White 79
-#define Black 88
+#define EMPTY ' '
+#define White 79 //'O'
+#define Black 88 //'X'
 int gameboard[N][N];
 int col,row;
 
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop*/
 
-/*void init_othello()//게임초기화 
+void init_othello()//게임초기화 
 {
 	
 }
@@ -35,31 +36,39 @@ int ok()
     }
 }
 int main(int argc, char *argv[]) {
+	char colors[2][10]={"White","Black"};
 	int i,j;
-	while (isGameEnd==0){
-	print_othello();
+	init_othello();//게임초기화 
+	
+	while (isGameEnd==0){ //game종료 조건 확인 
+	print_othello();//배치상태출력 
+	if(isThereRoom)//칸이 비어있다면
+		{
+			
+		}
+	 	continue;
+		
 	if(ok()==1)//보드판에 0이 있다면(꽉차지 않았다면) 
   {
     continue;
     }
-    printf("put a new white othello:");
+    printf("put a new %s othello:",colors[0]);
     scanf("%d %d",&x,&y);
     gameboard[x][y]=1;
     printf("%d",gameboard[x][y]);
-    if()
+    if(gameboard[x][y])
 }
 	return 0;
 }
 */
-_Bool isGameEnd()
+_Bool isThereRoom()//빈칸이 있는지 확인 
 {
 	int i,j;
-	//칸이 모두 차거나
-	for(i=0;i<6;i++)
+	for(i=0;i<N;i++)
 	{
-		for(j=0;j<6;j++)
+		for(j=0;j<N;j++)
 		{
-			if(gameboard[i][j]==0)
+			if(gameboard[i][j]==' ')
 			return 0;
 		}
 	 }
