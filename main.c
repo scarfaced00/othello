@@ -145,7 +145,7 @@ void count_colors() //색깔 별 알 개수 체크
 	}
 	printf("\nSTATUS - WHITE : %d, BLACK : %d\n",white,black);
 }
-/*
+
 void flip(int row, int col, int player)
 {
 	int i,j;
@@ -160,18 +160,17 @@ void flip(int row, int col, int player)
 		user=WHITE;
 		opp=BLACK;
 	}
-	//입력 칸의 왼쪽 가로 해당되는 알 뒤집기 
-	i=col-1;
-	while(gameboard[row][i]==user) //왼쪽 가로에 사용자 알 있으면 계속 왼쪽으로 
+	gameboard[row][col] = user;
+	//입력했을 때 그 칸 세로 위 칸들 점검 
+	i = row - 1;
+	while (room_exist(i, col) && gameboard[i][col] == opp) //보드에서 벗어나지않고, 상대방 알이 있으면 계속 위칸 점검 
 		i--;
-	if(gamebaord[row][i]==opp)//왼쪽 가로 점검하다 상대방 알 만나면 
-	{
-		i=col-1; 
-		while(gameboard[row][i]==opp)//왼쪽가로에 있는 상대방말을 모두 사용자의 알로 변경 
-		{
-			gameboard[row][i]=user;
+	if (room_exist(i, col) && gameboard[i][col] == user) { //그 인덱스가 보드 벗어나지 않고, 사용자 알이라면 입력값과 그 칸 사이 뒤집기 
+		i = row - 1;
+		while (gameboard[i][col] == opp) {
+			gameboard[i][col] = user;
 			i--;
 		}
 	}
- } 
+ 
  */

@@ -54,19 +54,5 @@ int flip_ok(int row, int col, int player) //뒤집을 수 있는 입력인지
 		user=WHITE;
 		opp=BLACK;
 	}
-	gameboard[row][col]=user;
 	
-	
-	//입력의 왼쪽 가로 점검
-	i=col-1;
-	ok=0;
-	while(room_exist(row,i) && gameboard[row][i]==opp)//한칸옆이 존재하는 칸이고 상대방 알존재하면 
-	{
-		i--; //한칸더왼쪽으로 
-		ok=1;
-	}
-	if(room_exist(row,i) && gameboard[row][i])==user) //존재하는 칸이고 사용자 알이 존재 
-	{
-		return 1;
-	}
 }
