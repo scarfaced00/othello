@@ -7,10 +7,10 @@ void init_othello() //보드 초기화
 		for(j=0;j<N;++)
 			gameboard[i][j]=EMPTY; 
 	//처음 4개알 두기 
-	gameboard[N/2-1][N/2]=White;
-	gameboard[N/2-1][N/2-1]=Black;
-	gameboard[N/2][N/2]=Black;
-	gameboard[N/2][N/2-1]=White;
+	gameboard[N/2-1][N/2]=WHITE;
+	gameboard[N/2-1][N/2-1]=BLACK;
+	gameboard[N/2][N/2]=BLACK;
+	gameboard[N/2][N/2-1]=WHITE;
 }
  
 void print_othello()//배치상태출력 
@@ -38,10 +38,34 @@ int is_room_exist(int row, int col)//사용자가 입력한 값이 존재하는 칸인지
 		return 1;
 }
 
-int move_ok(int row, int col, char player) 
+int flip_ok(int row, int col, int player) //뒤집을 수 있는 입력인지 
 {
 	int i, j
 	int ok;
 	char user, opp; 
+	//사용자와 상대편 설정 
+	if(player==1)
+	{
+		user=BLACK;
+		opp=WHITE; 
+	 } 
+	else{
+		user=WHITE;
+		opp=BLACK;
+	}
+	gameboard[row][col]=user;
 	
+	
+	//입력의 왼쪽 가로 점검
+	i=col-1;
+	ok=0;
+	while(is_room_exist(row,i) && gameboard[row][i]==opp)//한칸옆이 존재하는 칸이고 상대방 알존재하면 
+	{
+		i--; //한칸더왼쪽으로 
+		ok=1;
+	}
+	if(is_room_exist(row,i) && gameboard[row][i])==user) //존재하는 칸이고 사용자 알이 존재 
+	{
+		return 1;
+	}
 }
