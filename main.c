@@ -36,7 +36,7 @@ int ok()
     }
 }
 int main(int argc, char *argv[]) {
-	char colors[2][10]={"White","Black"};
+	int player=1;
 	int i,j;
 	init_othello();//게임초기화 
 	
