@@ -36,12 +36,14 @@ int ok()
     }
 }
 int main(int argc, char *argv[]) {
-	int player=1;
+	int player=2;
+	
 	int i,j;
 	init_othello();//게임초기화 
 	
 	while (isGameEnd==0){ //game종료 조건 확인 
 	print_othello();//배치상태출력 
+	count_colors();
 	if(isThereRoom)//칸이 비어있다면
 		{
 			
@@ -89,5 +91,5 @@ void count_colors()
 				white++;
 		}
 	}
-	printf("STATUS - WHITE : %d, BLACK : %d",white,black);
+	printf("\nSTATUS - WHITE : %d, BLACK : %d\n",white,black);
 }
