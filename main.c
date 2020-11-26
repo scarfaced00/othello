@@ -8,7 +8,11 @@
 extern int gameboard[N][N];
 int col,row;
 char players[2][10]={"black","white"};
-
+int is_room_exist(int row, int col)//사용자가 입력한 값이 존재하는 칸인지 
+{
+	if(row>=0 && row<N && col>=0 && col<N)
+		return 1;
+}
 /* run this program using the console pauser or add your own getch, system("pause") or input loop*/
 
 /*
@@ -27,7 +31,8 @@ void init_othello() //보드 초기화
 	gameboard[N/2][N/2-1]=BLACK;
 }
 */
-/*void print_othello()//배치상태출력 
+/*
+void print_othello()//배치상태출력 
 {
 	printf("  0 1 2 3 4 5\n -------------\n");
 	//가로줄 하나씩
@@ -77,15 +82,13 @@ int isGameEnd()
  */
 void input_index(int *row, int *col, int player) //좌표 입력받기 
  {
- 	int x;
  	printf("\nput a new %s othello : ",players[player-1]);
  	scanf("%d %d",row,col);
  	do 
  	{
  		printf("\nput a new %s othello : ",players[player-1]);
- 		scanf("%d %d",row,col);
- 		printf("non existent coordinate\n");
-	 } while((!((row >= 0) && (row < N) && (col >= 0) && (col < N))));
+ 		scanf("%d %d",row,col);  
+	 } while(!is_room_exist(row,col));
  }
 int main(int argc, char *argv[]) {
 	int player=2;//2가white이고 1이black 
@@ -133,9 +136,9 @@ void count_colors() //색깔 별 알 개수 체크
 	{
 		for(j=0;j<N;j++)
 		{
-			if(gameboard[N][N]==BLACK)
+			if(gameboard[i][j]==BLACK)
 				black++;
-			else if(gameboard[N][N]==WHITE)
+			else if(gameboard[i][j]==WHITE)
 				white++;
 		}
 	}

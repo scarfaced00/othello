@@ -4,7 +4,7 @@ extern void init_othello() //보드 초기화
 {
 	//모든 칸 빈칸으로 
 	int i,j;
-	for(i-0;i<N;i++)
+	for(i=0;i<N;i++)
 		for(j=0;j<N;j++)
 			gameboard[i][j]=EMPTY; 
 	//처음 4개알 두기 
