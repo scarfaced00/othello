@@ -4,16 +4,16 @@
 #define EMPTY ' '
 #define WHITE 79 //'O'
 #define BLACK 88 //'X'
-int gameboard[N][N];
+#include "head.h"
+extern int gameboard[N][N];
 int col,row;
 char players[2][10]={"black","white"};
 
-
-
 /* run this program using the console pauser or add your own getch, system("pause") or input loop*/
 
+/*
 void init_othello() //보드 초기화 
-/*빈 칸=' ', 흰 알='O', 검은색 알='X'*/ 
+//빈 칸=' ', 흰 알='O', 검은색 알='X'
 {
 	//모든 칸 빈칸으로 
 	int i,j;
@@ -26,7 +26,8 @@ void init_othello() //보드 초기화
 	gameboard[N/2][N/2]=WHITE;
 	gameboard[N/2][N/2-1]=BLACK;
 }
-void print_othello()//배치상태출력 
+*/
+/*void print_othello()//배치상태출력 
 {
 	printf("  0 1 2 3 4 5\n -------------\n");
 	//가로줄 하나씩
@@ -45,7 +46,7 @@ void print_othello()//배치상태출력
 		 }
 }
 
-
+*/
 /*void check_result()//결과 출력 
 {
 	printf(" : : flip result : :\n");
@@ -108,19 +109,7 @@ int main(int argc, char *argv[]) {
 		}
 	 	continue;
 		
-	if(ok()==1)//보드판에 0이 있다면(꽉차지 않았다면) 
-  {
-    continue;
-    }
-    printf("put a new %s othello:",colors[0]);
-    scanf("%d %d",&x,&y);
-    gameboard[x][y]=1;
-    printf("%d",gameboard[x][y]);
-    if(gameboard[x][y])
-}
-	return 0;
-}
-*/
+
 /*_Bool isThereRoom()//빈칸이 있는지 확인 
 {
 	int i,j;

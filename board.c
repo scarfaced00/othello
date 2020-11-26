@@ -1,10 +1,11 @@
-void init_othello() //보드 초기화 
+#define N 6
+extern void init_othello() //보드 초기화 
 /*빈 칸=' ', 흰 알='O', 검은색 알='X'*/ 
 {
 	//모든 칸 빈칸으로 
 	int i,j;
 	for(i-0;i<N;i++)
-		for(j=0;j<N;++)
+		for(j=0;j<N;j++)
 			gameboard[i][j]=EMPTY; 
 	//처음 4개알 두기 
 	gameboard[N/2-1][N/2]=WHITE;
@@ -13,7 +14,7 @@ void init_othello() //보드 초기화
 	gameboard[N/2][N/2-1]=WHITE;
 }
  
-void print_othello()//배치상태출력 
+extern void print_othello()//배치상태출력 
 {
 	printf("  0 1 2 3 4 5\n -------------\n");
 	//가로줄 하나씩
